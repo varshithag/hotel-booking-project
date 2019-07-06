@@ -36,6 +36,12 @@ class App extends React.Component{
     <h2 className="hed">The Payana Hotel</h2>
         <h6 className="sub">Journey Begins....</h6> 
         <Slide/>
+        <Switch>
+      <Route path="/users/register" component={Register}/>
+      <Route path="/users/login" component={Login}/>
+      <Route path="/users/account" component={UserAccount}/>
+      <Route path="/users/logout" component={Logout}/>
+    </Switch>
     <footer className="page-footer font-small special-color-dark pt-4 btm">
                     <div className="container">
                         <div className="row">
@@ -114,12 +120,7 @@ class App extends React.Component{
                     </div>
               </div> 
               </footer>
-    <Switch>
-      <Route path="/users/register" component={Register}/>
-      <Route path="/users/login" component={Login}/>
-      <Route path="/users/account" component={UserAccount}/>
-      <Route path="/users/logout" component={Logout}/>
-    </Switch>
+   
     </BrowserRouter>
   )
 }
