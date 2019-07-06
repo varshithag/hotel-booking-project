@@ -60,7 +60,7 @@ class Login extends React.Component{
                         email: '',
                         password:''
                     }}
-                    validationSchema={RegisterSchema}
+                    validationSchema={LoginSchema}
                     onSubmit={this.handleSubmit}>
                      {({ errors, touched })=>(
             <form onSubmit={this.handleSubmit}>

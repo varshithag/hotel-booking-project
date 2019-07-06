@@ -16,7 +16,8 @@
     text-align:right;
 }
 .navlink{
-    padding: 5px;
+    padding: 15px;
+    font-size: 25px;
     
 }
 .navlink.hover{
@@ -33,7 +34,7 @@
     width: 100%;
     position: fixed;
     
-    top: 70%;
+    top: 90%;
     overflow-x: auto;
     padding-top: 20px;
   }
@@ -43,4 +44,8 @@
   }
   .op{
       background-color: transparent
+  }
+  .slide{
+      height: 500px;
+      
   }

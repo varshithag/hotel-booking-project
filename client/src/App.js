@@ -19,6 +19,7 @@ class App extends React.Component{
   render(){
   return(
     <BrowserRouter>
+    
     <ul>
       {_.isEmpty(this.props.user)?(
         <div className="c">
@@ -33,14 +34,25 @@ class App extends React.Component{
             </div>
       )}
     </ul>
-    <h2 className="hed">The Payana Hotel</h2>
+        <div>
+        <h2 className="hed">The Payana Hotel</h2>
         <h6 className="sub">Journey Begins....</h6> 
-        <Slide/>
+        
+        </div>
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <Link className="nav-item navlink" to="/stay">Stay</Link>
+  <Link className="nav-item navlink">Booking</Link>
+  <Link className="nav-item navlink">Menu</Link>
+  <Link className="nav-item navlink">Review</Link>
+</nav>
+        {/* <Slide/> */}
         <Switch>
       <Route path="/users/register" component={Register}/>
       <Route path="/users/login" component={Login}/>
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
+      {/* <Route path="/stay" component={Stay}/> */}
     </Switch>
     <footer className="page-footer font-small special-color-dark pt-4 btm">
                     <div className="container">
