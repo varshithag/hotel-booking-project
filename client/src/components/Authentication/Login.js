@@ -1,6 +1,20 @@
 import React from 'react'
 import axios from 'axios'
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 
+const LoginSchema=Yup.object().shape({
+    username:Yup.string()
+    .min(5, 'Too Short!')
+    .required("username can't be blank"),
+    email:Yup.string()
+    .email('Invaild email..!!')
+    .required("email can't be blank"),
+    password:Yup.string()
+    .min(6, 'Too Short!')
+    .max(12, 'Too long..!')
+    .required('password required')
+})
 class Login extends React.Component{
     constructor(){
         super()
@@ -9,6 +23,7 @@ class Login extends React.Component{
             password:""
         }
     }
+    
     handleChange=(e)=>{
         e.persist()
         this.setState(()=>({
@@ -39,6 +54,15 @@ class Login extends React.Component{
         return(
             <fieldset >
                <legend>Login</legend>
+               <Formik
+                    initialValues={{
+                        username: '',
+                        email: '',
+                        password:''
+                    }}
+                    validationSchema={RegisterSchema}
+                    onSubmit={this.handleSubmit}>
+                     {({ errors, touched })=>(
             <form onSubmit={this.handleSubmit}>
                 <label> Email:
                     <input type="text" value={this.state.email}
@@ -49,7 +73,8 @@ class Login extends React.Component{
                     <input type="password" value={this.state.password} onChange={this.handleChange} name="password"/>
                 </label><br/><br/>
                     <input type="submit" />
-            </form>
+            </form>)}
+            </Formik>
          </fieldset>
         )
     }
