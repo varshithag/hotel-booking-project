@@ -8,7 +8,7 @@ const {userRouter}=require('./app/controllers/userController')
 
 app.use(express.json())
 app.use(cors())
-app.use('/users', userRouter)
+app.use('/users', userRouter);
 
 app.listen(port,(req,res)=>{
     
