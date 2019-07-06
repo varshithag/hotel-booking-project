@@ -1,0 +1,46 @@
+.main{
+    background-color:whitesmoke
+}
+
+
+.nav{
+    list-style-type: 0;
+    margin: 0;
+    padding: 0;
+    width:200%;
+    background-color:rgb(191, 191, 247);
+    
+}
+
+.c{
+    text-align:right;
+}
+.navlink{
+    padding: 5px;
+    
+}
+.navlink.hover{
+    background-color: black;
+}
+.sub{
+    margin-left: 300px
+}
+.hed{
+    margin-left: 100px
+}
+.split {
+    height: 30%;
+    width: 100%;
+    position: fixed;
+    
+    top: 70%;
+    overflow-x: auto;
+    padding-top: 20px;
+  }
+  .btm{
+      background-color: rgb(59, 59, 59);
+      color:wheat;
+  }
+  .op{
+      background-color: transparent
+  }
