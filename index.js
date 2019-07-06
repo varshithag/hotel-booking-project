@@ -5,12 +5,13 @@ const port=3006
 const {mongoose}=require("./config/database")
 
 const {userRouter}=require('./app/controllers/userController')
+const { CuisineRouter }=require('./app/controllers/cuisineController')
 
 app.use(express.json())
 app.use(cors())
-app.use('/users', userRouter);
+app.use('/users', userRouter)
+app.use('/cuisines', CuisineRouter)
 
 app.listen(port,(req,res)=>{
-    
-    console.log("listening to app", port);
+  console.log("listening to app", port);
 })

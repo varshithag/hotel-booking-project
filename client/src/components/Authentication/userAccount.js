@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {setUser} from '../action/a-user'
+import {setUser} from '../../action/a-user'
 
 class UserAccount extends React.Component{
 
