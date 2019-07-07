@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {resetUser} from '../action/a-user'
+import {resetUser} from '../../action/a-user'
 
 class Logout extends React.Component{
     componentDidMount(){
