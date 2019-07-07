@@ -7,13 +7,14 @@ import Login from './components/Authentication/Login'
 import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
+import Home from './components/homepage'
 // import Stay from './stay'
 // import Booking from './booking'
 // import HomePage from './homepage'
 // import HotelMenu from './menu'
 // import Review from './review'
 // import NavBar from "./navigation";
-import Slide from './slide'
+
 
 class App extends React.Component{
   render(){
@@ -46,93 +47,17 @@ class App extends React.Component{
             <Link className="nav-item navlink">Menu</Link>
             <Link className="nav-item navlink">Review</Link>
         </nav>
-        {/* <Slide/> */}
+        
         <Switch>
       <Route path="/users/register" component={Register}/>
       <Route path="/users/login" component={Login}/>
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
+      <Home/>
       {/* <Route path="/stay" component={Stay}/> */}
     </Switch>
     
-    <footer className="page-footer font-small special-color-dark pt-4 btm">
-                    <div className="container">
-                        <div className="row">
-                          <div className="col-sm-4">
-                              <div className="card op">  
-                                   <div className="card-body">
-                                        <h5 className="card-title">Room Features</h5>
-                                            <p className="card-text">
-                                                <ul>
-                                                    <li>
-                                                        Direct Dial Phone
-                                                    </li>
-                                                    <li>
-                                                        Electronic Safe
-                                                    </li>
-                                                    <li>
-                                                    Extra Bed On Request
-                                                    </li>
-                                                </ul> 
-                                            </p>                            
-                                     </div>  
-                                </div>      
-                              </div>
-                           <div className="col-sm-4">
-                               <div className="card op"> 
-                                    <div className="card-body">
-                                        <h5 className="card-title">Services</h5>
-                                         <p className="card-text">
-                                        <ul>
-                                            <li>
-                                            24 Hour Room & Concierge Service 
-                                            </li>
-                                            <li>
-                                            Newspaper (On Request))
-                                            </li>
-                                            <li>
-                                            Extra Bed On Request
-                                            </li>
-                                        </ul> 
-                                         </p>                            
-                                      </div>
-                                 </div>            
-                             </div>
-                          
-                          <div className="col-sm-4">
-                          <div className="card op"> 
-                          <div className="card-body">
-                              <h5 className="card-title">Technology</h5>
-                              <p className="card-text">
-                                  <ul>
-                                       <li>
-                                       40-Inch LCD TV With DVD Player On Request                                       
-                                        </li>
-                                        <li>
-                                        Air-Conditioning With Temperature Control
-                                        </li>
-                                        <li>
-                                        Personalised Check-In And Check-Out Facility
-                                        </li>
-                                  </ul> 
-                                </p>                            
-                            </div>                            
-                          </div>
-                          </div>
-                        
-                    </div>
-                    <div className="row">
-                        <div className="col-sm-12">
-                          <h1>Twitter</h1> 
-                        <li className="list-inline-item">
-                            <a className="btn-floating btn-tw mx-1">
-                               <i className="fab fa-twitter"> </i>
-                             </a>
-                         </li>
-                        </div>
-                    </div>
-              </div> 
-              </footer>
+    
    
     </BrowserRouter>
   )

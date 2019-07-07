@@ -4,9 +4,6 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 const LoginSchema=Yup.object().shape({
-    username:Yup.string()
-    .min(5, 'Too Short!')
-    .required("username can't be blank"),
     email:Yup.string()
     .email('Invaild email..!!')
     .required("email can't be blank"),
@@ -52,7 +49,7 @@ class Login extends React.Component{
     }
     render(){
         return(
-            <fieldset >
+            <fieldset>
                <legend>Login</legend>
                <Formik
                     initialValues={{
@@ -64,15 +61,21 @@ class Login extends React.Component{
                     onSubmit={this.handleSubmit}>
                      {({ errors, touched })=>(
             <form onSubmit={this.handleSubmit}>
+                <div class="form-group">
                 <label> Email:
-                    <input type="text" value={this.state.email}
-                    onChange={this.handleChange} name="email"
-                    />
-                </label><br/><br/>
+                    <Field type="text" name="email" className="form-control"/>
+                    {errors.email && touched.email ? (
+                            <div>{errors.email}</div>
+                         ):null} 
+                </label>
+                </div>
                 <label> Password:
-                    <input type="password" value={this.state.password} onChange={this.handleChange} name="password"/>
+                    <Field type="password"   name="password" className="form-control" />
+                    {errors.password && touched.password ? (
+                            <div>{errors.password}</div>
+                         ):null} 
                 </label><br/><br/>
-                    <input type="submit" />
+                    <button type="submit"> Login</button>  
             </form>)}
             </Formik>
          </fieldset>
