@@ -4,6 +4,9 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 const LoginSchema=Yup.object().shape({
+    username:Yup.string()
+    .min(5, 'Too Short!')
+    .required("username can't be blank"),
     email:Yup.string()
     .email('Invaild email..!!')
     .required("email can't be blank"),
@@ -49,8 +52,11 @@ class Login extends React.Component{
     }
     render(){
         return(
-            <fieldset>
-               <legend>Login</legend>
+            <fieldset >
+
+               <div className="container login-box">
+                <div className="row">
+                   
                <Formik
                     initialValues={{
                         username: '',
@@ -60,24 +66,34 @@ class Login extends React.Component{
                     validationSchema={LoginSchema}
                     onSubmit={this.handleSubmit}>
                      {({ errors, touched })=>(
-            <form onSubmit={this.handleSubmit}>
-                <div class="form-group">
-                <label> Email:
-                    <Field type="text" name="email" className="form-control"/>
+                         <div className="form-group">
+                    <form>
+                        <h3>Login</h3>
+                <label> Email 
+                    <Field type="text" name="email" className="form-control" placeholder="Enter your email"/>
                     {errors.email && touched.email ? (
                             <div>{errors.email}</div>
-                         ):null} 
-                </label>
-                </div>
-                <label> Password:
-                    <Field type="password"   name="password" className="form-control" />
+                    ):null}
+                </label><br/>
+                <label> Password
+                    <Field type="password" name="password" className="form-control" placeholder="Enter your password"/>
                     {errors.password && touched.password ? (
                             <div>{errors.password}</div>
-                         ):null} 
-                </label><br/><br/>
-                    <button type="submit"> Login</button>  
-            </form>)}
+                         ):null}
+                </label><br/>
+                    <input type="submit" className="btn btn-primary" />
+                    
+            </form>
+            </div>)}
+          
             </Formik>
+                    </div>
+
+                </div>
+
+           
+            
+          
          </fieldset>
         )
     }
