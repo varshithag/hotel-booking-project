@@ -18,7 +18,8 @@ const roomCategorySchema=new Schema({
     },
     extraBed:{
         type:Boolean,
-        required:true
+        required:true,
+        default:false
     },
     price:{
         type:Number,

@@ -41,11 +41,11 @@ class App extends React.Component{
         </div>
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <Link className="nav-item navlink" to="/stay">Stay</Link>
-  <Link className="nav-item navlink">Booking</Link>
-  <Link className="nav-item navlink">Menu</Link>
-  <Link className="nav-item navlink">Review</Link>
-</nav>
+            <Link className="nav-item navlink" to="/stay">Stay</Link>
+            <Link className="nav-item navlink">Booking</Link>
+            <Link className="nav-item navlink">Menu</Link>
+            <Link className="nav-item navlink">Review</Link>
+        </nav>
         {/* <Slide/> */}
         <Switch>
       <Route path="/users/register" component={Register}/>
@@ -54,6 +54,7 @@ class App extends React.Component{
       <Route path="/users/logout" component={Logout}/>
       {/* <Route path="/stay" component={Stay}/> */}
     </Switch>
+    
     <footer className="page-footer font-small special-color-dark pt-4 btm">
                     <div className="container">
                         <div className="row">

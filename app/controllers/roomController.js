@@ -1,7 +1,7 @@
 const express=require('express')
 const router=express.Router()
 const {RoomCategory}=require('../models/roomCategory')
-const authenticateUser=require('../middleware/user-authentication')
+const {authenticateUser}=require('../middleware/user-authentication')
 router.get('/',(req,res)=>{
     RoomCategory.find()
     .then(rooms=>{
