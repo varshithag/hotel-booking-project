@@ -53,7 +53,10 @@ class Login extends React.Component{
     render(){
         return(
             <fieldset >
-               <legend>Login</legend>
+
+               <div className="container login-box">
+                <div className="row">
+                   
                <Formik
                     initialValues={{
                         username: '',
@@ -63,18 +66,34 @@ class Login extends React.Component{
                     validationSchema={LoginSchema}
                     onSubmit={this.handleSubmit}>
                      {({ errors, touched })=>(
-            <form onSubmit={this.handleSubmit}>
-                <label> Email:
-                    <input type="text" value={this.state.email}
-                    onChange={this.handleChange} name="email"
-                    />
-                </label><br/><br/>
-                <label> Password:
-                    <input type="password" value={this.state.password} onChange={this.handleChange} name="password"/>
-                </label><br/><br/>
-                    <input type="submit" />
-            </form>)}
+                         <div className="form-group">
+                    <form>
+                        <h3>Login</h3>
+                <label> Email 
+                    <Field type="text" name="email" className="form-control" placeholder="Enter your email"/>
+                    {errors.email && touched.email ? (
+                            <div>{errors.email}</div>
+                    ):null}
+                </label><br/>
+                <label> Password
+                    <Field type="password" name="password" className="form-control" placeholder="Enter your password"/>
+                    {errors.password && touched.password ? (
+                            <div>{errors.password}</div>
+                         ):null}
+                </label><br/>
+                    <input type="submit" className="btn btn-primary" />
+                    
+            </form>
+            </div>)}
+          
             </Formik>
+                    </div>
+
+                </div>
+
+           
+            
+          
          </fieldset>
         )
     }
