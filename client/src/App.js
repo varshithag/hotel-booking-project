@@ -8,7 +8,13 @@ import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
 import Home from './components/homepage'
+
+import Stay from './components/stay'
+import RoomCategory from './components/addRoomCategory'
+
+
 import MenuForm from './components/menu/menu-form';
+
 // import Stay from './stay'
 // import Booking from './booking'
 // import HomePage from './homepage'
@@ -55,11 +61,15 @@ class App extends React.Component{
       <Route path="/users/login" component={Login}/>
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
+
+      <Route path="/stay" component={Stay}/>
+      <Home/>
+      
+
       {/* <Route path="/stay" component={Stay}/> */}
-      {/* <Route path="/menus" component={MenuForm} /> */}
-      {/* <Home/> */}
-      <MenuForm/>
- 
+      <Route path="/menus" component={MenuForm} /> 
+      
+       
      
     </Switch>
     

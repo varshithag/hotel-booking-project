@@ -10,7 +10,9 @@ const RoomCategorySchema=Yup.object().shape({
     .positive('number should be positive'),
     bedType:Yup.string(),
     price:Yup.number()
-    .required("price cannot be empty")
+    .required("price cannot be empty"),
+    description:Yup.string()
+    .required("description cannot be empty")
 })
 class RoomCategory extends React.Component{
     handelSubmit=(values)=>{
@@ -20,6 +22,7 @@ class RoomCategory extends React.Component{
                 if(response.data.errors){
                     alert(response.data.errors)
                 }else{
+                    console.log('done')
                     // this.props.history.push('/users/admin')
                 }
             })
@@ -27,9 +30,10 @@ class RoomCategory extends React.Component{
     render(){
         return(
             <div>
-                <h2>Room Addition</h2>
+                <h2 className="h">Room Addition</h2>
                 <Formik
                 initialValues={{
+                    image:'',
                     roomType:'',
                     occupancy:0,
                     bedType:'',
@@ -38,36 +42,49 @@ class RoomCategory extends React.Component{
                 validationSchema={RoomCategorySchema}
                     onSubmit={this.handelSubmit}>
                 {({errors,touched})=>(
-                    <Form>
+                    <Form className="form-group box room-box" enctype="multipart/form-data">
                         <label>
                             RoomType
-                            <Field type="text" name="roomType" /> 
+                            <Field type="text" name="roomType" className="form-control" /> 
                         {errors.username && touched.username ? (
                             <div>{errors.username}</div>
                          ):null}                           
-                        </label>
+                        </label><br/>
                         <label>
                         occupancy
-                            <Field type="number" name="occupancy" /> 
+                            <Field type="number" name="occupancy" className="form-control" /> 
                         {errors.occupancy && touched.occupancy ? (
                             <div>{errors.occupancy}</div>
                          ):null}                           
-                        </label>
+                        </label><br/>
                         <label>
                         Bed Type
-                            <Field type="string" name="bedType"/> 
+                            <Field type="string" name="bedType" className="form-control"/> 
                         {errors.bedType && touched.bedType ? (
                             <div>{errors.bedType}</div>
                          ):null}                           
-                        </label>
+                        </label><br/>
+                        <label>
+                        Description
+                            <textarea type="string" name="description" className="form-control"/> 
+                        {errors.description && touched.description ? (
+                            <div>{errors.description}</div>
+                         ):null}                           
+                        </label><br/>
+
                         <label>
                             Price
-                            <Field type="text" name="price" /> 
+                            <Field type="text" name="price" className="form-control" /> 
                         {errors.price && touched.price ? (
                             <div>{errors.price}</div>
                          ):null}                           
-                        </label>
-                        <button type="submit">Add</button>
+                        </label><br/>
+                        <Field type="file" name="image"/> 
+                            {errors.image && touched.image ? (
+                            <div>{errors.image}</div>
+                         ):null}                           
+                        <br/>
+                        <button type="submit" className="btn btn-secondary">Add</button>
                     </Form>
                 )}
                 
