@@ -8,6 +8,7 @@ import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
 import Home from './components/homepage'
+import MenuForm from './components/menu/menu-form';
 // import Stay from './stay'
 // import Booking from './booking'
 // import HomePage from './homepage'
@@ -40,21 +41,26 @@ class App extends React.Component{
         <h6 className="sub">Journey Begins....</h6> 
         
         </div>
-        
+        <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="nav-item navlink" to="/stay">Stay</Link>
             <Link className="nav-item navlink" to="/">Booking</Link>
-            <Link className="nav-item navlink" to="/">Menu</Link>
+            <Link className="nav-item navlink" to="/menus">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
         </nav>
+      </div>
         
-        <Switch>
+      <Switch>
       <Route path="/users/register" component={Register}/>
       <Route path="/users/login" component={Login}/>
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
-      <Home/>
       {/* <Route path="/stay" component={Stay}/> */}
+      {/* <Route path="/menus" component={MenuForm} /> */}
+      {/* <Home/> */}
+      <MenuForm/>
+ 
+     
     </Switch>
     
     
