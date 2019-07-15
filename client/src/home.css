@@ -56,3 +56,12 @@
       top:50%;
       left:40%;
   } 
+  .h{
+    text-align: center
+  }
+  .room-box{
+    width: 200px;
+    position: absolute;
+    top:30%;
+    left:45%;
+  }

@@ -5,9 +5,9 @@ const roomCategorySchema=new Schema({
         type:String,
         required:true
     },
-    // image:{
-    //     type:File,
-    // },
+    image:{
+        type:String,
+    },
     occupancy:{
         type:Number,
         required:true
@@ -24,6 +24,11 @@ const roomCategorySchema=new Schema({
     price:{
         type:Number,
         required:true
+    },
+    description:{
+        type:String,
+        minlength:10,
+        maxlength:500
     }
 })
 const RoomCategory=mongoose.model('Room',roomCategorySchema)

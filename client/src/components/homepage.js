@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 // import {BrowserRouter, Link, Route,Switch} from 'react-router-dom'
 import _ from 'lodash'
 // import {connect} from 'react-redux'
@@ -8,6 +8,7 @@ import _ from 'lodash'
 // import Logout from './components/Authentication/Logout'
 // import './home.css'
 import Slide from '../slide'
+import Stay from './stay'
 
 const Home=()=>{
     return(
