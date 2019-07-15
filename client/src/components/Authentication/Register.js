@@ -64,8 +64,7 @@ class Register extends React.Component{
                     </Form>
                 )}
                </Formik >      
-            </div> 
-            
+            </div>   
         )
     }
 }

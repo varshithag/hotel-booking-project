@@ -73,7 +73,6 @@ class RoomCategory extends React.Component{
                 
                 </Formik>
             </div>
-
         )
     }
 }
