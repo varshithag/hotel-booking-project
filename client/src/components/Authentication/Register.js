@@ -33,8 +33,8 @@ class Register extends React.Component{
 
     render(){
         return(
-            <div>
-            <h1>Register Form</h1>
+            <div className="container login-box">
+                <h1>Register</h1>
                 <Formik
                     initialValues={{
                         username: '',
@@ -44,27 +44,28 @@ class Register extends React.Component{
                     validationSchema={RegisterSchema}
                     onSubmit={this.handleSubmit}>
                      {({ errors, touched })=>(
-                         <Form>
-                        <label>
+                            <Form className="form-group">
+                        <label> Username:
                             <Field type="text" placeholder="Username.." 
-                                name="username" />
+                                        name="username" className="form-control"/>
                                 {errors.username && touched.username ? (
                                     <div>{errors.username}</div>
                                 ):null}
-                        </label> <br /><br />
-                        <label>
-                            <Field type="email" placeholder="abc...@gmail.com" name="email" />
+                        </label> <br />
+                        <label>Email:
+                                    <Field type="email" className="form-control" placeholder="abc...@gmail.com" name="email" />
                             {errors.email && touched.email ? (<div>{errors.email}</div>):null}
-                        </label> <br /><br />
-                        <label>
-                            <Field type="password" placeholder="password" name="password" />
+                        </label> <br />
+                        <label>Password:
+                            <Field type="password" placeholder="***********" name="password" />
                             {errors.password && touched.password ? (<div>{errors.password}</div>):null}
-                        </label><br /><br />
-                        <button type="submit">Submit</button>
+                        </label><br />
+                                <button type="submit" className="btn btn-primary">Submit</button>
                     </Form>
                 )}
                </Formik >      
-            </div>  
+            </div> 
+            
         )
     }
 }

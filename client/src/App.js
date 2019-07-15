@@ -43,9 +43,9 @@ class App extends React.Component{
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="nav-item navlink" to="/stay">Stay</Link>
-            <Link className="nav-item navlink">Booking</Link>
-            <Link className="nav-item navlink">Menu</Link>
-            <Link className="nav-item navlink">Review</Link>
+            <Link className="nav-item navlink" to="/">Booking</Link>
+            <Link className="nav-item navlink" to="/">Menu</Link>
+            <Link className="nav-item navlink" to="/">Review</Link>
         </nav>
         
         <Switch>
