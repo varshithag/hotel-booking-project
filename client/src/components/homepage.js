@@ -14,7 +14,7 @@ const Home=()=>{
     return(
         <div>
             <Slide/>
-            <footer className="page-footer font-small special-color-dark pt-4 btm">
+            {/* <footer className="page-footer font-small special-color-dark pt-4 btm">
                     <div className="container">
                         <div className="row">
                           <div className="col-sm-4">
@@ -91,7 +91,7 @@ const Home=()=>{
                         </div>
                     </div>
               </div> 
-              </footer>
+              </footer> */}
         </div>
     )
 }

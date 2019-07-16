@@ -10,13 +10,18 @@ import './home.css'
 // import Home from './components/homepage'
 
 import Stay from './components/stay'
-// import RoomCategory from './components/addRoomCategory'
+
+
 
 
 import MenuForm from './components/menu-form';
 import AdminPage from './components/Admin-page/admin-page';
 import MenuNew from './components/Admin-page/menu/Menu-new'
 import MenuEdit from './components/Admin-page/menu/menu-edit'
+import RoomCategory from './components/addRoomCategory'
+import Reserve from './components/reserveRoom'
+import ClientPage from './components/clientLogin' 
+
 
 
 
@@ -48,8 +53,17 @@ class App extends React.Component{
       )}
     </ul>
         <div>
-        <h2 className="hed">The Payana Hotel</h2>
-        <h6 className="sub">Journey Begins....</h6> 
+          <div className="row">
+            <div className="col-sm-3">
+            <img src="/img/payanalogo.png" width="150 px"/>
+            </div>
+            <div className="col-sm-9">
+            <h2 className="hed">The Payana Hotel</h2>
+           <h6 className="sub">Journey Begins....</h6> 
+            </div>
+          </div>
+          
+        
         
         </div>
         <div>
@@ -59,6 +73,7 @@ class App extends React.Component{
             <Link className="nav-item navlink" to="/menus">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
             <Link className="nav-item navlink" to="/adminpage">AdminPage</Link>
+            <Link className="nav-item navlink" to="/client">Client</Link>
         </nav>
       </div>
         
@@ -68,6 +83,12 @@ class App extends React.Component{
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
       <Route path="/stay" component={Stay}/>
+      <Route path="/reserve" component={Reserve}/>
+      <Route path="/client" component={ClientPage}/>
+      <Home/>
+      
+      {/* <Route path="/stay" component={Stay}/> */}
+      <Route path="/menus" component={MenuForm} /> 
       
       <Route path="/menus/new" component={MenuNew} exact/>
       <Route path="/menus" component={MenuForm} />
@@ -79,7 +100,9 @@ class App extends React.Component{
       <AdminPage/>
  
     </Switch>
+
     </BrowserRouter>
+
   )
 }
 }
