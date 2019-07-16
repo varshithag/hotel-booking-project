@@ -8,10 +8,14 @@ import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
 import Home from './components/homepage'
+
 import Stay from './components/stay'
 import RoomCategory from './components/addRoomCategory'
 import Reserve from './components/reserveRoom'
 import ClientPage from './components/clientLogin' 
+
+
+import MenuForm from './components/menu/menu-form';
 
 // import Stay from './stay'
 // import Booking from './booking'
@@ -54,26 +58,33 @@ class App extends React.Component{
         
         
         </div>
-        
+        <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="nav-item navlink" to="/stay">Stay</Link>
             <Link className="nav-item navlink" to="/">Booking</Link>
-            <Link className="nav-item navlink" to="/">Menu</Link>
+            <Link className="nav-item navlink" to="/menus">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
             <Link className="nav-item navlink" to="/client">Client</Link>
         </nav>
+      </div>
         
-        <Switch>
+      <Switch>
       <Route path="/users/register" component={Register}/>
       <Route path="/users/login" component={Login}/>
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
+
       <Route path="/stay" component={Stay}/>
       <Route path="/reserve" component={Reserve}/>
       <Route path="/client" component={ClientPage}/>
       <Home/>
-      {/* <RoomCategory/> */}
+      
+
       {/* <Route path="/stay" component={Stay}/> */}
+      <Route path="/menus" component={MenuForm} /> 
+      
+       
+     
     </Switch>
       </BrowserRouter>
   )
