@@ -17,9 +17,7 @@ class ClientPage extends React.Component{
                 </nav>
                 </div>
                 <div className="col-sm-9">
-
-                </div>
-             
+                </div>             
             </div>
 
             </div>
