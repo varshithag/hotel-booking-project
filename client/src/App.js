@@ -10,6 +10,8 @@ import './home.css'
 import Home from './components/homepage'
 import Stay from './components/stay'
 import RoomCategory from './components/addRoomCategory'
+import Reserve from './components/reserveRoom'
+import ClientPage from './components/clientLogin' 
 
 // import Stay from './stay'
 // import Booking from './booking'
@@ -39,8 +41,17 @@ class App extends React.Component{
       )}
     </ul>
         <div>
-        <h2 className="hed">The Payana Hotel</h2>
-        <h6 className="sub">Journey Begins....</h6> 
+          <div className="row">
+            <div className="col-sm-3">
+            <img src="/img/payanalogo.png" width="150 px"/>
+            </div>
+            <div className="col-sm-9">
+            <h2 className="hed">The Payana Hotel</h2>
+           <h6 className="sub">Journey Begins....</h6> 
+            </div>
+          </div>
+          
+        
         
         </div>
         
@@ -49,6 +60,7 @@ class App extends React.Component{
             <Link className="nav-item navlink" to="/">Booking</Link>
             <Link className="nav-item navlink" to="/">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
+            <Link className="nav-item navlink" to="/client">Client</Link>
         </nav>
         
         <Switch>
@@ -57,14 +69,13 @@ class App extends React.Component{
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
       <Route path="/stay" component={Stay}/>
+      <Route path="/reserve" component={Reserve}/>
+      <Route path="/client" component={ClientPage}/>
       <Home/>
       {/* <RoomCategory/> */}
       {/* <Route path="/stay" component={Stay}/> */}
     </Switch>
-    
-    
-   
-    </BrowserRouter>
+      </BrowserRouter>
   )
 }
 }

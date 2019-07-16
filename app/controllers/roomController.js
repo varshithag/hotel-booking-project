@@ -13,7 +13,7 @@ router.get('/',(req,res)=>{
     })
 })
 
-router.post('/',upload.single('image'),function(req,res){
+router.post('/',function(req,res){
     const body=req.body   
         const roomCategory=new RoomCategory(body)
         roomCategory.save()

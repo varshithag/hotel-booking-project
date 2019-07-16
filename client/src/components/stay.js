@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 class Stay extends React.Component{
     constructor(){
         super()
@@ -34,7 +35,7 @@ class Stay extends React.Component{
                             <label className="card-text">Price: {category.price}</label><br/>
                             </div>
                             </div>
-                            <button className="btn btn-primary">proceed</button>
+                           <Link to="/reserve"><button className="btn btn-primary" >proceed</button> </Link> 
                         </div>
                     </div>  
                     </div>

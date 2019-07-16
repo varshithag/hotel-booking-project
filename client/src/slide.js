@@ -7,10 +7,11 @@ class Slide extends React.Component{
           <div className="container">
           <div className="row">
               <div className="col-sm-12">
-                  <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">                       
+                  <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">    
+                                     
                        <div className="carousel-item active" roles="listbox">
                           <div className="item active">                      
-                                <img className="d-block w-100 slide" src="/img/view1.jpg" alt={"image"}/>
+                                <img className="d-block w-100 slide" src="/img/view2.jpg" alt={"image"}/>
                                 <div className="carousel-caption">
                                   <h1>first slide</h1>
                                 </div>
