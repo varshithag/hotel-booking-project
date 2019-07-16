@@ -2,6 +2,7 @@ const express=require("express")
 const router=express.Router()
 const {User}=require("../models/user")
 const { authenticateUser }=require('../middleware/user-authentication')
+const {authenticateAdmin}=require('../middleware/Admin-authentication')
 const _=require('lodash')
 
 router.post('/register',(req,res)=>{

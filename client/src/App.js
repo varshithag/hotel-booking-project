@@ -7,15 +7,23 @@ import Login from './components/Authentication/Login'
 import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
-import Home from './components/homepage'
+// import Home from './components/homepage'
 
 import Stay from './components/stay'
+
+
+
+
+import MenuForm from './components/menu-form';
+import AdminPage from './components/Admin-page/admin-page';
+import MenuNew from './components/Admin-page/menu/Menu-new'
+import MenuEdit from './components/Admin-page/menu/menu-edit'
 import RoomCategory from './components/addRoomCategory'
 import Reserve from './components/reserveRoom'
 import ClientPage from './components/clientLogin' 
 
 
-import MenuForm from './components/menu/menu-form';
+
 
 // import Stay from './stay'
 // import Booking from './booking'
@@ -64,6 +72,7 @@ class App extends React.Component{
             <Link className="nav-item navlink" to="/">Booking</Link>
             <Link className="nav-item navlink" to="/menus">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
+            <Link className="nav-item navlink" to="/adminpage">AdminPage</Link>
             <Link className="nav-item navlink" to="/client">Client</Link>
         </nav>
       </div>
@@ -73,20 +82,27 @@ class App extends React.Component{
       <Route path="/users/login" component={Login}/>
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
-
       <Route path="/stay" component={Stay}/>
       <Route path="/reserve" component={Reserve}/>
       <Route path="/client" component={ClientPage}/>
       <Home/>
       
-
       {/* <Route path="/stay" component={Stay}/> */}
       <Route path="/menus" component={MenuForm} /> 
       
-       
+      <Route path="/menus/new" component={MenuNew} exact/>
+      <Route path="/menus" component={MenuForm} />
+      <Route path="/menus/edit/:id" component={MenuEdit}/>
+  
      
+
+      {/* <Home/> */}
+      <AdminPage/>
+ 
     </Switch>
-      </BrowserRouter>
+
+    </BrowserRouter>
+
   )
 }
 }
