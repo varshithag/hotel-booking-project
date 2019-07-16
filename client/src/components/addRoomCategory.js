@@ -70,7 +70,6 @@ class RoomCategory extends React.Component{
                         <button type="submit">Add</button>
                     </Form>
                 )}
-                
                 </Formik>
             </div>
         )
