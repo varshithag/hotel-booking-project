@@ -31,6 +31,10 @@ const UserScheme=new Schema({
         minlength: 6,
         maxlength: 128
     },
+    isAdmin:{
+        type:Boolean,
+        default:false
+    }, 
     tokens:[{
         token:{
             type:String

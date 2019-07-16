@@ -7,15 +7,17 @@ import Login from './components/Authentication/Login'
 import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
-import Home from './components/homepage'
+// import Home from './components/homepage'
 
 import Stay from './components/stay'
 // import RoomCategory from './components/addRoomCategory'
 
 
-import MenuForm from './components/menu/menu-form';
+import MenuForm from './components/menu-form';
+import AdminPage from './components/Admin-page/admin-page';
+import MenuNew from './components/Admin-page/menu/Menu-new'
+import MenuEdit from './components/Admin-page/menu/menu-edit'
 
-// import MenuAddform from './components/menu/menu-add-form'
 
 
 // import Stay from './stay'
@@ -56,7 +58,7 @@ class App extends React.Component{
             <Link className="nav-item navlink" to="/">Booking</Link>
             <Link className="nav-item navlink" to="/menus">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
-            {/* <Link className="nav-item navlink" to="/" */}
+            <Link className="nav-item navlink" to="/adminpage">AdminPage</Link>
         </nav>
       </div>
         
@@ -66,9 +68,15 @@ class App extends React.Component{
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
       <Route path="/stay" component={Stay}/>
+      
+      <Route path="/menus/new" component={MenuNew} exact/>
       <Route path="/menus" component={MenuForm} />
-      <Home/>
-      {/* <MenuForm/> */}
+      <Route path="/menus/edit/:id" component={MenuEdit}/>
+  
+     
+
+      {/* <Home/> */}
+      <AdminPage/>
  
     </Switch>
     </BrowserRouter>
