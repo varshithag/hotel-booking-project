@@ -15,6 +15,12 @@ const RoomCategorySchema=Yup.object().shape({
     .required("description cannot be empty")
 })
 class RoomCategory extends React.Component{
+    constructor(){
+        super()
+        this.state={
+            file:''
+        }
+    }
     handelSubmit=(values)=>{
         axios.post(`http://localhost:3006/roomcategory`,values)
             .then(response=>{
@@ -27,6 +33,15 @@ class RoomCategory extends React.Component{
                 }
             })
     }
+
+    handleFile=(e)=>{
+        e.persist()
+       console.log(e)
+       const img=e.target.files[0]
+        this.setState(()=>({
+        image:img
+        }))
+    }
     render(){
         return(
             <div>
@@ -37,7 +52,8 @@ class RoomCategory extends React.Component{
                     roomType:'',
                     occupancy:0,
                     bedType:'',
-                    price:0
+                    price:0,
+                    files:''
                 }}
                 validationSchema={RoomCategorySchema}
                     onSubmit={this.handelSubmit}>
@@ -79,10 +95,10 @@ class RoomCategory extends React.Component{
                             <div>{errors.price}</div>
                          ):null}                           
                         </label><br/>
-                        <Field type="file" name="image"/> 
-                            {errors.image && touched.image ? (
+                        <input type="file" name="image" accept="image/*" enctype="multipart/form-data" value={this.state.file} onChange={this.handleFile} /> 
+                            {/* {errors.image && touched.image ? (
                             <div>{errors.image}</div>
-                         ):null}                           
+                         ):null}                            */}
                         <br/>
                         <button type="submit" className="btn btn-secondary">Add</button>
                     </Form>

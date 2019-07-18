@@ -5,6 +5,9 @@ const MenuSchema = new Schema({
     // image: {
     //     type: String
     // },
+    name:{
+        type:String
+    },
     price: {
         type: Number
     },
@@ -12,7 +15,7 @@ const MenuSchema = new Schema({
         type: String
     },
     cuisine: {
-        type: Schema.Types.String,
+        type: Schema.Types.ObjectId,
         ref: 'Cuisine'
     }
 })

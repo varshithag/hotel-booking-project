@@ -1,4 +1,5 @@
 import React from 'react'
+import './menu.css'
 
 class MenuAddform extends React.Component{
     constructor(){
@@ -7,7 +8,8 @@ class MenuAddform extends React.Component{
             name:'',
             cuisines:[],
             price:'',
-            image:''
+            image:'',
+            introduction:''
         }
     }
 
@@ -24,7 +26,8 @@ class MenuAddform extends React.Component{
             name:this.state.name,
             cuisines:this.state.cuisines,
             price:this.state.price,
-            image:this.state.image
+            image:this.state.image,
+            introduction:this.state.introduction
         }
        console.log(formData)
        this.props.handleSubmit(formData)
@@ -32,35 +35,41 @@ class MenuAddform extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="menuaddform" >
                 <h3>Add Menu Form</h3>
-                <form onSubmit={this.handleSubmit}>
+                <form className="form-group" action="/uploadfile" encType="multipart/form-data" method="post"
+                                onSubmit={this.handleSubmit}>
                 <label> Name:
-                    <input type="text" value={this.state.name} onChange={this.handleChange}
+                    <input type="text" value={this.state.name} onChange={this.handleChange} className="form-control"
                     name="name"/>
                 </label><br/>
                 <label>Price:
-                    <input type="text" value={this.state.price} onChange={this.handleChange}
+                    <input type="text" value={this.state.price} onChange={this.handleChange} className="form-control"
                     name="price"/>
                 </label><br/>
 
                 <label>Cuisines:
-                <select value={this.state.cuisine} onChange={this.state.handleChange}>
+                <select  value={this.state.cuisines} onChange={this.state.handleChange}>
                     <option value="">select</option>
                     {this.state.cuisines.map(cuisine=>{
                         return <option key={cuisine._id}
-                        value={cuisine._id}>{cuisine.name}</option>
-                    })}
+                        >{cuisine.name}</option>
+                    })} 
                 </select>
                 </label>
                 <br/>
-
+                    
                     <label>Image:
-                    <input type="file" value={this.state.img} onChange={this.handleChange}
+                    <input type="file" value={this.state.img} onChange={this.handleChange} className="form-control"
                             name="image" />
                     </label><br />
+                    
 
-                    <input type='submit'/>
+                    <label>description:
+                        <textarea type="text" value={this.state.introduction} onChange={this.handleChange} className="form-control" name="introduction"/>
+                    </label>
+
+                    <input type='submit' className="btn btn-primary"/>
                 </form>
             </div>
         )

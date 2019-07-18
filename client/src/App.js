@@ -7,7 +7,7 @@ import Login from './components/Authentication/Login'
 import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
-// import Home from './components/homepage'
+import Home from './components/homepage'
 
 import Stay from './components/stay'
 
@@ -41,8 +41,8 @@ class App extends React.Component{
     <ul>
       {_.isEmpty(this.props.user)?(
         <div className="c">
-            <Link to="/users/register">Register</Link> 
-            <Link to="/users/login">Login</Link>
+            <Link to="/users/register"><button className="btn btn-link">Register</button></Link> 
+            <Link to="/users/login"><button className="btn btn-link">Login</button></Link>
         </div>
       ):(
             <div>
@@ -67,9 +67,9 @@ class App extends React.Component{
         
         </div>
         <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="nav-item navlink" to="/stay">Stay</Link>
-            <Link className="nav-item navlink" to="/">Booking</Link>
+            <Link className="nav-item navlink" to="/booking">Booking</Link>
             <Link className="nav-item navlink" to="/menus">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
             <Link className="nav-item navlink" to="/adminpage">AdminPage</Link>
@@ -83,22 +83,19 @@ class App extends React.Component{
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
       <Route path="/stay" component={Stay}/>
+      <Route path="/booking" component={RoomCategory}/>
+      <Route path="/adminpage" component={AdminPage} />
+      <Route path="/menus/new" component={MenuNew} exact />
+      <Route path="/menus" component={MenuForm} />
       <Route path="/reserve" component={Reserve}/>
       <Route path="/client" component={ClientPage}/>
       <Home/>
       
       {/* <Route path="/stay" component={Stay}/> */}
-      <Route path="/menus" component={MenuForm} /> 
-      
-      <Route path="/menus/new" component={MenuNew} exact/>
-      <Route path="/menus" component={MenuForm} />
-      <Route path="/menus/edit/:id" component={MenuEdit}/>
-  
-     
-
+      {/* <Route path="/menus" component={MenuForm} />  */}
+    
+      {/* <Route path="/menus/edit/:id" component={MenuEdit}/> */}
       {/* <Home/> */}
-      <AdminPage/>
- 
     </Switch>
 
     </BrowserRouter>

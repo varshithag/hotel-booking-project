@@ -4,7 +4,7 @@ const {Menu}=require('../models/menu')
 
 
 router.get('/',(req,res)=>{
-    Menu.find()
+    Menu.find().populate('cuisine',['name'])
     .then(menus=>res.json(menus))
     .catch(err=>res.json(err))
 })
@@ -38,6 +38,9 @@ router.delete('/:id', (req,res)=>{
     .then(menu => res.json(menu))
     .catch(err => res.json(err))
 })
+
+
+
 
 module.exports={
     menuRouter:router

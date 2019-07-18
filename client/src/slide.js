@@ -11,19 +11,19 @@ class Slide extends React.Component{
                                      
                        <div className="carousel-item active" roles="listbox">
                           <div className="item active">                      
-                                <img className="d-block w-100 slide" src="/img/view2.jpg" alt={"image"}/>
+                                {/* <img className="d-block w-100 slide" src="/img/view2.jpg" alt={"image"}/> */}
                                 <div className="carousel-caption">
                                   <h1>first slide</h1>
                                 </div>
                           </div>
                           <div className="carousel-item">                      
-                                <img className="d-block w-100" src="/img/view2.jpg" alt={"image"}/>
+                                {/* <img className="d-block w-100" src="/img/view2.jpg" alt={"image"}/> */}
                                 <div className="carousel-caption">
                                   <h1>Second slide</h1>
                                 </div>
                           </div>
                           <div className="carousel-item">                     
-                                <img className="d-block w-100" src="/image/view3.jpg" alt={"image"}/>
+                                {/* <img className="d-block w-100" src="/image/view3.jpg" alt={"image"}/> */}
                                 <div className="carousel-caption">
                                   <h1>Third slide</h1>
                                 </div>
