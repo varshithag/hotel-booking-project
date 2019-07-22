@@ -7,7 +7,7 @@ import Login from './components/Authentication/Login'
 import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
-// import Home from './components/homepage'
+import Home from './components/homepage'
 
 import Stay from './components/stay'
 
@@ -67,7 +67,7 @@ class App extends React.Component{
         
         </div>
         <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="nav-item navlink" to="/stay">Stay</Link>
             <Link className="nav-item navlink" to="/">Booking</Link>
             <Link className="nav-item navlink" to="/menus">Menu</Link>
@@ -96,7 +96,7 @@ class App extends React.Component{
   
      
 
-      {/* <Home/> */}
+      
       <AdminPage/>
  
     </Switch>

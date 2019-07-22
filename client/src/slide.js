@@ -1,5 +1,5 @@
 import React from 'react'
-import Carosel from 'react-responsive-carousel'
+import {Carosel} from 'react-responsive-carousel'
 
 class Slide extends React.Component{
   render(){
@@ -7,7 +7,16 @@ class Slide extends React.Component{
           <div className="container">
           <div className="row">
               <div className="col-sm-12">
-
+                {/* <Carosel autoPlay>
+                <div>
+                  <img className="d-block w-100 slide" src="/img/view1.jpg" alt={"image"}/>
+                  <p className="legend">Legend 1</p>
+               </div>
+               <div>
+                  <img className="d-block w-100 slide" src="/img/view2.jpg" alt={"image"}/>
+                  <p className="legend">Legend 2</p>
+               </div>
+                </Carosel> */}
 
 
                   {/* <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">    
