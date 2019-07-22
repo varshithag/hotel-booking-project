@@ -76,7 +76,6 @@ class App extends React.Component{
             <Link className="nav-item navlink" to="/client">Client</Link>
         </nav>
       </div>
-        
       <Switch>
       <Route path="/users/register" component={Register}/>
       <Route path="/users/login" component={Login}/>
@@ -91,7 +90,7 @@ class App extends React.Component{
       <Route path="/client" component={ClientPage}/>
       <Home/>
       
-      {/* <Route path="/stay" component={Stay}/> */}
+      <Route path="/stay" component={Stay}/>
       {/* <Route path="/menus" component={MenuForm} />  */}
     
       {/* <Route path="/menus/edit/:id" component={MenuEdit}/> */}
