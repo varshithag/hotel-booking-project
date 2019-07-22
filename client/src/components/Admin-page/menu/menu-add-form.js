@@ -49,7 +49,7 @@ class MenuAddform extends React.Component{
                 </label><br/>
 
                 <label>Cuisines:
-                <select  value={this.state.cuisines} onChange={this.state.handleChange}>
+                <select  value={this.state.cuisines} onChange={this.handleChange} name="cuisines">
                     <option value="">select</option>
                     {this.state.cuisines.map(cuisine=>{
                         return <option key={cuisine._id}

@@ -25,7 +25,7 @@ class CuisineForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit} className="form-group">
                 <label> Tagname:
-                    <input type="text" value={this.state.value} className="form-control"
+                    <input type="text" value={this.state.name} className="form-control"
                         onChange={this.handleChange} name="name" />
                 </label> <br /><br />
 
