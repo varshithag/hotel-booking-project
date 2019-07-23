@@ -122,11 +122,6 @@ UserScheme.statics.findByToken=function(token){
         _id:tokenData._id,
         'tokens.token': token
     })
-  
 }
-
-
-
 const User=mongoose.model('User', UserScheme)
-
 module.exports={User}
