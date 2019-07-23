@@ -35,7 +35,9 @@ class Stay extends React.Component{
                             <label className="card-text">Price: {category.price}</label><br/>
                             </div>
                             </div>
-                           <Link to="/reserve"><button className="btn btn-primary" >proceed</button> </Link> 
+                           {/* <Link to="/reserve"> */}
+                               <button className="btn btn-primary" >proceed</button> 
+                               {/* </Link>  */}
                         </div>
                     </div>  
                     </div>

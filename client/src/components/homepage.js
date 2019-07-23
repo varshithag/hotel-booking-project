@@ -7,13 +7,13 @@ import _ from 'lodash'
 // import UserAccount from './components/Authentication/userAccount'
 // import Logout from './components/Authentication/Logout'
 // import './home.css'
-import Slide from '../slide'
+import Sliding from '../slide'
 import Stay from './stay'
 
 const Home=()=>{
     return(
         <div>
-            <Slide/>
+            <Sliding/>
             {/* <footer className="page-footer font-small special-color-dark pt-4 btm">
                     <div className="container">
                         <div className="row">

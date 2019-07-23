@@ -65,3 +65,46 @@
     top:30%;
     left:45%;
   }
+  .fi{
+      width:60%;
+      height: 50%;
+      border: 2px;
+  }
+  .reserveborder{
+      width:200px;
+      height:500px;
+      border: rgb(194, 191, 191) 5px solid;
+      box-sizing: border-box;
+  }
+  .sidebar-nav{
+      z-index: 1;
+      position: absolute;
+      height:500px;
+      width:200px;
+      
+      border: 2px solid grey;
+      background:rgb(53, 52, 52);
+
+  }
+  .menu-nav{
+      margin-left: 200px;
+      height:500px;
+      width:200px;
+      border: 2px solid grey;
+      background: grey;
+      
+  }
+  .side-button{
+      width:100%;
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(94, 91, 91, 0.5);
+  }
+  .client-top{
+      height: 100%;
+      width: 100%;
+      background: rgb(94, 94, 250)
+  }
+  .client-btn{
+    margin-left: 300px;
+    
+  }

@@ -8,6 +8,7 @@ import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
 import Home from './components/homepage'
+import Menu from './menu'
 
 import Stay from './components/stay'
 
@@ -85,6 +86,7 @@ class App extends React.Component{
       <Route path="/stay" component={Stay}/>
       <Route path="/reserve" component={Reserve}/>
       <Route path="/client" component={ClientPage}/>
+      
       <Home/>
       
       {/* <Route path="/stay" component={Stay}/> */}
