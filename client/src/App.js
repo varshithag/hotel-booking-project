@@ -8,6 +8,7 @@ import UserAccount from './components/Authentication/userAccount'
 import Logout from './components/Authentication/Logout'
 import './home.css'
 import Home from './components/homepage'
+import Booking from './components/booking'
 
 import Menu from './menu'
 
@@ -51,9 +52,15 @@ class App extends React.Component{
       ):(
             <div>
 
-              <li><Link to="/users/account">UserAccount</Link></li><br /><br />
-              <li><Link to="/users/logout">Logout</Link></li> 
-            </div>
+        <div className="row c">
+          <div className="col-sm-10"> 
+         <Link to="/users/logout">Logout</Link>
+          </div>
+          <div className="col-sm-2"> 
+          <p>Welcome {this.props.user.username}</p>
+          </div>       
+        </div>
+        </div>
       )}
     </ul>
         <div>
@@ -77,7 +84,7 @@ class App extends React.Component{
             <Link className="nav-item navlink" to="/menus">Menu</Link>
             <Link className="nav-item navlink" to="/">Review</Link>
             <Link className="nav-item navlink" to="/adminpage">AdminPage</Link>
-            <Link className="nav-item navlink" to="/client">Client</Link>
+          
         </nav>
       </div>
       <Switch>
@@ -86,7 +93,7 @@ class App extends React.Component{
       <Route path="/users/account" component={UserAccount}/>
       <Route path="/users/logout" component={Logout}/>
       <Route path="/stay" component={Stay}/>
-      <Route path="/booking" component={RoomCategory}/>
+      <Route path="/booking" component={Booking}/>
       <Route path="/adminpage" component={AdminPage} />
       <Route path="/menus/new" component={MenuNew} exact />
       <Route path="/menus" component={MenuForm} />

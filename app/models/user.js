@@ -35,6 +35,11 @@ const UserScheme=new Schema({
         type:Boolean,
         default:false
     }, 
+    role:{
+        type:String,
+        required:true,
+        default:'user'
+    },
     tokens:[{
         token:{
             type:String
@@ -51,6 +56,14 @@ const UserScheme=new Schema({
 UserScheme.pre('save',function(next){
     const user=this
     if(user.isNew){
+      const count= User.find().length
+        .then((count) => {
+            if (count == 0) {
+                user.role = "admin"
+            } else {
+                user.role = "user"
+        }
+    })
     bcryptjs.genSalt(10)
     .then(salt=>{
         bcryptjs.hash(user.password,salt)

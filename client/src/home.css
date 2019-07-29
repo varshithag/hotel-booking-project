@@ -3,7 +3,6 @@
     background-color:whitesmoke
 }
 
-
 .nav{
     list-style-type: 0;
     margin: 0;
@@ -53,8 +52,8 @@
    .login-box{
       width: 200px;
       position: absolute;
-      top:50%;
-      left:40%;
+      top:35%;
+      left:40%;      
   } 
   .h{
     text-align: center
@@ -80,8 +79,7 @@
       z-index: 1;
       position: absolute;
       height:500px;
-      width:200px;
-      
+      width:200px;      
       border: 2px solid grey;
       background:rgb(53, 52, 52);
 
@@ -107,4 +105,16 @@
   .client-btn{
     margin-left: 300px;
     
+  }
+  .booking{
+      /* background:rgba(245, 246, 247, 0.911); */
+      height:100%;
+      width: 400px;
+      opacity: 1;
+      margin-left: 250px;
+        color: rgb(75, 72, 72);
+  }
+  .booking-button{
+      width: 100%;
+      color: rgb(74, 68, 131);
   }

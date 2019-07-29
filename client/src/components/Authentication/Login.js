@@ -14,17 +14,27 @@ const LoginSchema=Yup.object().shape({
 })
 class Login extends React.Component{    
     handleSubmit = (formData) => {
-        console.log('am in outside the handlesubmit')
-        axios.post('http://localhost:3006/users/login', formData)
+            axios.post('http://localhost:3006/users/login', formData)
             .then(response => {
-                console.log(response.data)
                 if (response.data.errors) {
                     alert(response.data.errors)
                 } else {
                     const token = response.data.token
-                    console.log('am in handlesubmit')
                     localStorage.setItem('userAuthToken', token)
-                    this.props.history.push('/users/account')
+                    axios.get('http://localhost:3006/users/account',{
+                        headers:{
+                            'x-auth':localStorage.getItem('userAuthToken')
+                        }
+                    })
+                    .then(response=>{
+                        console.log(response.data)
+                        const user=response.data                     
+                    
+                    if(user.isAdmin){
+                        this.props.history.push('/adminpage')
+                    }
+                    this.props.history.push('/client')
+                }) 
                 }
             })
     }
@@ -42,24 +52,24 @@ class Login extends React.Component{
                      {({ errors, touched })=>(
                             <Form className="form-group">
                         
-                        <h3>Login</h3>
-                <label> Email 
-                    <Field type="text" name="email" className="form-control" placeholder="Enter your email"/>
-                    {errors.email && touched.email ? (
-                            <div>{errors.email}</div>
-                    ):null}
-                </label><br/>
-                <label> Password
-                    <Field type="password" name="password" className="form-control" placeholder="***********"/>
-                    {errors.password && touched.password ? (
-                            <div>{errors.password}</div>
-                         ):null}
-                </label><br/>
-                    <button type="submit" className="btn btn-primary">Submit</button>   
-            </Form>
-            )}
-            </Formik>
-            </div>
+                        <h2>Login</h2>
+                             <label> Email 
+                                <Field type="text" name="email" className="form-control" placeholder="Enter your email"/>
+                                {errors.email && touched.email ? (
+                                        <div>{errors.email}</div>
+                                ):null}
+                            </label><br/>
+                            <label> Password
+                                <Field type="password" name="password" className="form-control" placeholder="***********"/>
+                                {errors.password && touched.password ? (
+                                        <div>{errors.password}</div>
+                                    ):null}
+                            </label><br/>
+                            <button type="submit" className="btn btn-primary">Submit</button>   
+                         </Form>
+                        )}
+                        </Formik>
+                     </div>
             </div>
         )
     }

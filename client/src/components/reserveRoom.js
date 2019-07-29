@@ -1,7 +1,7 @@
 import React from 'react'
 import "react-dates/initialize";
 // import "./styles.css";
-import DatePicker from "./datepicker"
+
 import StayForm from './stayForm'
 class Reserve extends React.Component{
     constructor(){
@@ -9,9 +9,10 @@ class Reserve extends React.Component{
         this.state={
             checkIn:'',
             checkOut:'',
-            isClicked:true
-        
-
+            isClicked:true,
+            breakfast:'',
+            lunch:'',
+            dinner:''
         }
         this.handleChange=this.handleChange.bind(this)
     }
@@ -26,14 +27,19 @@ class Reserve extends React.Component{
         return(
             <div className="container">
             <div className="row"> 
-            <div className="col-sm-6">
+            <div className="col-sm-6 form-group">
                 <form>
-                    <h4>Select CheckIn-CheckOut Date  </h4>
-                    {this.state.isClicked && (<DatePicker handleChange={this.handleChange}/>) } 
+                    <div className="row"><div className="col-sm-2"><label>CheckIn</label></div>
+                    <div className="col-sm-4"><input type="date" className="form-control" /></div></div>
+                    
+                    <div className="row">
+                    <div className="col-sm-2"><label>CheckIot</label></div>
+                    <div className="col-sm-4"><input type="date" className="form-control" /></div>
+                    </div>
+                    
                     <fieldset className="fi">
                         <legend>Add-on's</legend>
-                        <div className="row">
-                            
+                        <div className="row">                            
                             <div className="col-sm-4">
                                 <h4>Break Fast</h4> 
                             </div>
@@ -44,10 +50,7 @@ class Reserve extends React.Component{
                                 <input type="checkbox"/>
                             </div>
                             </div>
-                           
-                        
                         <div className="row">
-                        
                             <div className="col-sm-4">
                                 <h4>Lunch</h4> 
                             </div>
@@ -58,8 +61,6 @@ class Reserve extends React.Component{
                                 <input type="checkbox"/>
                             </div>
                             </div>
-                           
-                        
                         <div className="row">                        
                             <div className="col-sm-4">
                                 <h4>Dinner</h4> 
@@ -70,16 +71,14 @@ class Reserve extends React.Component{
                             <div className="col-sm-1">
                                 <input type="checkbox"/>
                             </div>
-                            </div>                           
-                        
+                            </div> 
                     </fieldset>
+                    <button className="btn btn-link "><i className="fa fa-arrow-right fa-4x" aria-hidden="true"></i></button>
                  </form>             
                  </div>
                  <div className="col-sm-4 reserveborder">
                     {!this.state.isClicked&&(<StayForm checkIn={this.state.checkIn} />)}
                  </div>
-                {/* <p>{this.state.checkIn.getDate()}</p> */}
-               
             </div>
             </div>
         )
